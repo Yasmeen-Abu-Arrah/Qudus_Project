@@ -1,10 +1,10 @@
-<?php include 'db.php'; ?>
+<?php include '.gitignore/db.php'; ?>
 <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <title> Qudus </title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>

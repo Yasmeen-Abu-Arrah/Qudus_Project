@@ -1,5 +1,5 @@
 <?php 
-include 'db.php';
+include '.gitignore/db.php';
 $msg = ""; // message to show after form submission 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") { // just when form is submitted by button (post method)
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // just when form is submitted by bu
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>visits</title>
 </head>
 <body>

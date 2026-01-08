@@ -1,6 +1,6 @@
 <?php
 session_start(); // save data across multiple pages 
-include 'db.php';
+include '.gitignore/db.php'; 
 $error = ""; // message to show if login fails
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <title>Login - Qudus Admin</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container"> 
