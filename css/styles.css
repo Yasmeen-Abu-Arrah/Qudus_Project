@@ -5,7 +5,7 @@
    /* --gold-hover: #C5A028;*/
     --gold-hover: #a7762a;
     --ivory: #F2F0E6;
-    --bg-dark: #131416;
+    --bg-dark: #080d18;
     --card-bg: #1c232b;
 }
 
@@ -29,28 +29,29 @@ body {
     align-items: center;
     width: 100%;
     padding: 1rem 5rem;
-    background-color: #0f1a24c8;
-    backdrop-filter: blur(12px);
+    background-color: #020d18a7;
+    backdrop-filter: blur(10px);
     z-index: 1000;
     top: 0;
 }
 
-.logo {
+.navbar .logo {
     display: flex;
     align-items: center;
     gap: 0.2rem;
     cursor: pointer;
 }
-.logo img {
+.navbar .logo img {
     width: 70px;
     height: auto;
 }
 .logo-text {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--ivory);
+    color: #b9812d;
     text-decoration: none;
-    font-family: 'Amiri', serif;}
+    font-family: 'Amiri', serif;
+}
 
 .nav-links {
     list-style: none;
@@ -78,6 +79,11 @@ body {
     font-weight: bold;
     font: 0.8rem sans-serif;
 }
+.sign-btn .material-symbols-outlined {
+    vertical-align: middle;
+    margin-left: 0.3rem;
+    font-size: 1rem;
+}
 .sign-btn:hover {
     background-color: var(--gold-hover);
     border: none;
@@ -89,18 +95,20 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 5rem;
+    padding-top: 5.5rem;
     background-image: url("../images/about-bg.jpg");
     background-size:cover;
     background-position: center;
+
 }
 .about-overlay {
     position: absolute;
+    backdrop-filter: blur(3.5px);
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, #0f1a24, rgba(34, 35, 39, 0.599));
+    height: 100vh;
+    background: linear-gradient(to bottom, #020e19, rgba(1, 4, 16, 0.395));
 }
 
 .about-contant {
@@ -108,24 +116,35 @@ body {
     z-index: 10;
     max-width: 990px;
     padding: 2rem;
+    justify-items: center;
 }
 .about-contant h1 {
     font-family: 'Amiri', serif;
     font-size: 2.5rem;
     margin-bottom: 1rem;
     font-weight: 700;
+    justify-items: center;
+}
+
+.about-contant img {
+    width: 190px;
+    height: auto;
+    margin-bottom: -15px;
+    z-index: 11;
 }
 .about-contant .highlight {
-    color: var(--gold);
-    font-size: 2em;
+    margin-top: 0px;
+    color: #b9812d;
+    font-size: 1.3em;
+    line-height: 1.2;
 }
 .about-contant p {
     font-size: 1.3rem;
-    margin-bottom: 2rem;
     color: rgba(242, 240, 230, 0.9);
 }
 
 .about-btns {
+    margin-top: 2rem;
     display: flex;
     gap: 1.5rem;
     justify-content: center;
@@ -139,11 +158,11 @@ body {
     background-color: #ca8b1d;
     border-radius: 0.3rem;
     box-shadow: 1px 1px 20px rgba(212, 175, 55, 0.3);
-    padding: 1rem 2rem;
+    padding: 1rem 4rem;
     font-family: 'Cairo', sans-serif;
 }
 .about-btns .tour-btn a { 
-    font-size: 1rem;
+    font-size: 1.3em;
     font-weight: bold;
     color: var(--navy);
     text-decoration: none;
@@ -153,15 +172,260 @@ body {
     box-shadow: 3px 3px 25px rgba(212, 175, 55, 0.3);
 }
 
-.about-btns .view3d-btn{
-    background-color: transparent;
-    border: 1.5px solid #0f1a24c8;
+.about-btns .view-prints-btn {
+    background-color: #0f1a2462;
+    border: 1.5px solid var(--ivory);
     border-radius: 0.3rem;
-    padding: 0.9rem 2rem;
+    padding: 0.7rem 4rem;
     font-family: 'Cairo', sans-serif;
+    box-shadow: 1px 1px 5px rgba(255, 255, 255, 0.064);
 }
-
-.about-btns .view3d-btn a{ 
+.about-btns .view-prints-btn a{ 
+    font-size: 1.3em;
+    font-weight: bold;
     color: var(--ivory);
     text-decoration: none;
 }
+.about-btns .view-prints-btn:hover {
+    background-color: #0f1a24c8;
+    box-shadow: 3px 3px 25px rgba(255, 255, 255, 0.064);
+    border: none;
+}
+
+
+ .collection {
+    padding: 5rem 2rem;
+    position: relative;
+}
+
+.collection-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#e1bb3f 1px, transparent 1px);
+    background-size: 32px 32px;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.collection-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.collection-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 3rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.section-title {
+    font-family: 'Amiri', serif;
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.section-desc {
+    color: rgba(242, 240, 230, 0.6);
+    max-width: 500px;
+}
+
+.view-all {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.view-all:hover {
+    color: white;
+}
+
+.cards-scroll {
+    display: flex;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+.card {
+    min-width: 320px;
+    aspect-ratio: 3/4;
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card:hover {
+    border-color: rgba(212, 175, 55, 0.5);
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s;
+}
+
+.card:hover .card-image {
+    transform: scale(1.05);
+}
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    transition: opacity 0.3s;
+}
+
+.card:hover .card-overlay {
+    opacity: 0.6;
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+}
+
+.card-period {
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.card-title {
+    font-family: 'Amiri', serif;
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.card-desc {
+    font-size: 0.9rem;
+    color: rgba(242, 240, 230, 0.6);
+}
+
+.end-msg {
+    padding: 2rem;
+    text-align: center;
+}
+.msg-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+.msg-content h2 {
+    font-family: serif;
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+.msg-content p {
+    font-size: 1.5rem;
+    color: rgba(242, 240, 230, 0.8);
+    margin-bottom: 2.5rem;
+}
+.msg-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding: 1rem 2rem;
+}
+
+.msg-buttons .exhibitions, .prints {
+    background-color: var(--gold);
+    border: 1.5px solid var(--navy);
+    border-radius: 0.3rem;
+    padding: 0.7rem 3rem;
+    font-family: 'Cairo', sans-serif;
+    box-shadow: 1px 1px 20px rgba(212, 175, 55, 0.3);
+}
+.msg-buttons .exhibitions a, .prints a{ 
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--navy);
+    text-decoration: none;
+}
+.msg-buttons .exhibitions:hover, .prints:hover {
+    background-color: #d19a03;
+    box-shadow: 1px 1px 20px rgba(212, 175, 55, 0.3);
+    border: none;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    background: #11192a;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem 2rem 3rem;
+}
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.footer-logo {
+    width: 350px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    text-align: start;
+}
+
+.footer-logo img {
+    width: 100px;
+    height: auto;
+    padding-bottom: 10px;
+}
+
+.footer-links, .footer-social {
+    display: flex;
+    list-style: none;
+    text-align: justify;
+    flex-direction: column; 
+}
+
+.footer-links li, .footer-social li {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.footer-links a, .footer-social a {
+    color: rgba(242, 240, 230, 0.6);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 1.2em;
+    line-height: 2.5;
+}
+
+.footer-links a:hover, .footer-social a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1.5rem;
+    color: rgba(242, 240, 230, 0.3);
+    font-size: 0.9rem;
+    padding-left: 25px;
+    text-align: start;
+}
+
