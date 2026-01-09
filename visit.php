@@ -59,5 +59,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // just when form is submitted by bu
             <button type="submit">sure?</button>
         </form>
     </div>
+    <p><a href="index.html">Back to site</a></p>
 </body>
 </html>
