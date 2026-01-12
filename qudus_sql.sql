@@ -313,3 +313,11 @@ insert into visitors_requests
 (4, 4, 150.00, 'Bank Transfer', 'Pending'),
 (5, 5, 110.00, 'Cash', 'Paid');
 
+SELECT * FROM visits ORDER BY id DESC;
+
+SELECT v.id, vis.email, e.title
+FROM visits v
+JOIN visitors vis ON v.visitor_id = vis.id
+JOIN exhibitions e ON v.exhibition_id = e.id
+ORDER BY v.id DESC;
+

@@ -1,5 +1,5 @@
 <?php 
-include '.gitignore/db.php';
+include '../.gitignore/db.php';
 $msg = ""; // message to show after form submission 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") { // just when form is submitted by button (post method)
@@ -9,15 +9,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // just when form is submitted by bu
         //add visitor / ignore --> if not exists (based on email)/ ? --> sql injection safe
         $stmt->execute([$_POST['fname'], $_POST['lname'], $_POST['email'], $_POST['phone']]);
         
-        //$visitor_id = $conn->lastInsertId() ?: $conn->query("select id from visitors where email='{$_POST['email']}'")->fetchColumn();
-        //SQL Injection 
-        //edit above to be safe from SQL Injection :
-        if (!$visitor_id = $conn->lastInsertId()) {
+        $visitor_id = $conn->lastInsertId();
+        if (!$visitor_id) {
             $stmt = $conn->prepare("SELECT id from visitors where email=?");
             $stmt->execute([$_POST['email']]);
             $visitor_id = $stmt->fetchColumn();
         }
 
+        $stmt = $conn->prepare("INSERT INTO visits (visitor_id, exhibition_id) VALUES (?, ?)");
+
+        $stmt->execute([$visitor_id, $_POST['exhibition_id']]);
+    
         /*
         feedback || how?
         $stmt = $conn->prepare("insert into visits (visitor_id, exhibition_id, feedback) values (?, ?, ?)");
@@ -59,6 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // just when form is submitted by bu
             <button type="submit">sure?</button>
         </form>
     </div>
-    <p><a href="index.html">Back to site</a></p>
+    <p><a href="../index.html">Back to site</a></p>
 </body>
 </html>

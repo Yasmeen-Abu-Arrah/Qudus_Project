@@ -1,6 +1,6 @@
 <?php
 session_start(); // save data across multiple pages 
-include '.gitignore/db.php'; 
+include '../.gitignore/db.php'; 
 $error = ""; // message to show if login fails
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
