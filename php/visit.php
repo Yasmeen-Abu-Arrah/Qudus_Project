@@ -36,6 +36,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // just when form is submitted by bu
         $msg = "error";
     }
 }
+
+$selected_exhibition = isset($_GET['exhibition_id']) ? $_GET['exhibition_id'] : null;
+// to make the option == the exh. that user want from exh. page 
+
 ?>
 
 <!--
@@ -131,7 +135,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // just when form is submitted by bu
                         <?php
                         $exs = $conn->query("SELECT id, title FROM exhibitions WHERE status != 'Past'");
                         while($ex = $exs->fetch()) {
-                            echo "<option value='{$ex['id']}'>{$ex['title']}</option>";
+                            $selected = ($selected_exhibition == $ex['id']) ? 'selected' : '';
+                            echo "<option value='{$ex['id']}' {$selected}>{$ex['title']}</option>";
                         }
                         ?>
                     </select>
