@@ -3,6 +3,7 @@ $host = "localhost";
 $user = "Yasmeen";
 $pass = "MySqlRoot";
 $dbname = "qudus"; 
+$charset = "utf8mb4";
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $user, $pass);

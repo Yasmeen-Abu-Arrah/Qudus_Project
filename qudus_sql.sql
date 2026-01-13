@@ -32,6 +32,11 @@ create table if not exists staff(
     constraint `staff_pk` primary key (id)
 );
 
+alter table staff
+add username varchar(50) unique after email,
+add password varchar(255) after username,
+-- add last_login timestamp null after password;
+
 create table if not exists artists(
     id int auto_increment,
     first_name varchar(20) not null,
@@ -218,6 +223,40 @@ insert into staff
 ('يوسف', 'التميمي', 'Security', 'security@qudus.ps', '2017-11-20'),
 ('نور', 'البرغوثي', 'Volunteer', 'volunteer@qudus.ps', '2022-02-05');
 
+update staff 
+set username= 'adminahmad', 
+password= '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
+where id=1;
+
+update staff 
+set username= 'curatorlaila', 
+password= '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
+where id=2;
+
+update staff 
+set username= 'guidemahmoud', 
+password= '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
+where id=3;
+
+update staff 
+set username= 'designersara', 
+password= '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
+where id=3;
+
+update staff 
+set username= 'securityypusef', 
+password= '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
+where id=4;
+
+update staff 
+set username= 'volunteernoor', 
+password= '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
+where id=5;
+/* $2y$ --> bcrypt algo.
+   10 --> cost
+   92IXUNpkjO0rOQ5byMi.Ye --> random value
+   4oKoEa3Ro9llC/.og/at2.uheWG/igi --> password المشفرة
+*/
 
 insert into visitors
 (first_name, last_name, email) values
